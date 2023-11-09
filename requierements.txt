@@ -1,0 +1,8 @@
+# Core Dependencies
+
+- Python 3.6 or higher
+- The `requests` library (you can install it using `pip install requests`)
+
+
+
+
