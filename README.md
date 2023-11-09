@@ -30,7 +30,7 @@ Before running the program, obtain an API key from Open Exchange Rates [here](ht
 ### Running the Program
 
 1. Open a terminal in the project directory.
-2. Run the program using `python currency_converter.py`.
+2. Run the program using `python project.py`.
 
 ## Documentation
 
