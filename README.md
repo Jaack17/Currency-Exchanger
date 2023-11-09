@@ -1,6 +1,6 @@
 # Currency Exchange Program
 
-This Python program allows you to convert an amount from one currency to another using the latest exchange rates from the Open Exchange Rates API.
+This Python program enables currency conversion using the latest exchange rates from the Open Exchange Rates API.
 
 ## Usage
 
@@ -19,9 +19,33 @@ Example:
 
 ### Prerequisites
 
-Before running the program, you need to obtain an API key from Open Exchange Rates. You can sign up for a free account and obtain an API key [here](https://openexchangerates.org/signup).
+Before running the program, obtain an API key from Open Exchange Rates [here](https://openexchangerates.org/signup).
 
 ### Installation
 
-1. Clone this repository to your local machine:
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required dependencies (requests module) using `pip install requests`.
+
+### Running the Program
+
+1. Open a terminal in the project directory.
+2. Run the program using `python currency_converter.py`.
+
+## Documentation
+
+- The program's documentation is included in the source code.
+
+## Author
+
+- Giacomo Innocenti
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+
+## Acknowledgments
+
+- The program uses data from the Open Exchange Rates API.
+
 
