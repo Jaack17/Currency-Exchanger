@@ -15,8 +15,8 @@ This Python program allows users to convert currency using the latest exchange r
 
 2. It then prompts the user for the following information:
    - The amount in the source currency they want to convert.
-   - The source currency (e.g., USD).
-   - The target currency (e.g., EUR).
+   - The source currency (e.g., USD, $, United States Dollar).
+   - The target currency (e.g., EUR, €, Euro).
 
 3. The program validates user input for currencies and numerical amounts.
 
@@ -44,11 +44,11 @@ This Python program allows users to convert currency using the latest exchange r
 
 - User-friendly display: Currency codes and symbols are now displayed for easy understanding.
 
-- Enhanced user input validation: The program now accommodates various ways users might input currencies, such as using currency codes, names, or symbols.
+- Input validation: The program accommodates various ways users might input currencies, such as using currency codes, names, or symbols.
 
 ## Usage
 
-1. Before running the program, obtain an API key from [Open Exchange Rates](https://openexchangerates.org/signup) and replace the `api_key` variable in the code.
+1. Before running the program, obtain an API key from [Open Exchange Rates](https://openexchangerates.org/signup) and replace the `api_key` variable in the code. For demonstration i provided the API key for limited usage.
 
 2. Run the program using Python: `python project.py`
 
@@ -57,11 +57,7 @@ This Python program allows users to convert currency using the latest exchange r
 ## Author
 
 - Giacomo Innocenti
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
-
+- 
 ## Acknowledgments
 
 - The program uses data from the Open Exchange Rates API.
