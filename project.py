@@ -7,7 +7,7 @@ def main():
         exchange_rates = fetch_exchange_rates(api_key)
 
         if not exchange_rates:
-            print("Failed to retrieve exchange rates. Check your API key and endpoint.")
+            print("Failed to retrieve exchange rates. Please check your API key and endpoint.")
             return
 
         source_amount = get_source_amount()
@@ -17,13 +17,14 @@ def main():
         conversion_rate = exchange_rates[target_currency] / exchange_rates[source_currency]
         converted_amount = source_amount * conversion_rate
 
-        print(f"{source_amount} {source_currency} is equivalent to {converted_amount} {target_currency}")
+        print(f"\n{source_amount} {source_currency} is equivalent to {converted_amount:.2f} {target_currency}\n")
 
         if not update_exchange_rates(api_key):
-            print("Failed to update exchange rates. Check your API key and endpoint.")
+            print("Failed to update exchange rates. Please check your API key and endpoint.")
             return
 
         if not exchange_currency_again():
+            print("Thank you for using my currency converter. Goodbye!")
             break
 
 def get_source_amount():
@@ -39,13 +40,18 @@ def get_user_input(prompt, valid_currencies=None):
         user_input = input(prompt).strip().upper()
         if not valid_currencies or user_input in valid_currencies:
             return user_input
-        print("Invalid currency. Please try again.")
+        print("Invalid currency. Please enter a valid currency code.")
 
 def update_exchange_rates(api_key):
     while True:
         update_choice = input("Do you want to update exchange rates? (yes/no): ").strip().lower()
         if update_choice == "yes":
-            return fetch_exchange_rates(api_key)
+            new_rates = fetch_exchange_rates(api_key)
+            if new_rates:
+                print("Exchange rates updated successfully.\n")
+                return True
+            else:
+                print("Failed to update exchange rates. Please check your API key and endpoint.")
         elif update_choice == "no":
             return True
         else:
@@ -68,6 +74,7 @@ def fetch_exchange_rates(api_key):
 
 if __name__ == "__main__":
     main()
+
 
 
 
