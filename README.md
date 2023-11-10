@@ -1,12 +1,13 @@
 # Currency Exchanger
 
-This is a Python program that allows users to convert currency using the latest exchange rates from the Open Exchange Rates API. The program fetches exchange rates from the API, prompts the user for input, performs the currency conversion, and displays the result.
+This Python program allows users to convert currency using the latest exchange rates from the Open Exchange Rates API. The program fetches exchange rates from the API, prompts the user for input, performs the currency conversion, and displays the result.
 
 #### Video Demo:  <URL HERE>
 
 ## Files
 
 - `project.py`: The main program file. It contains the code to interact with the user, fetch exchange rates, and perform currency conversion.
+- `test_project.py`: The file containing tests for the program functions.
 
 ## Description
 
@@ -25,6 +26,12 @@ This is a Python program that allows users to convert currency using the latest 
 
 6. After completing the currency exchange, the user can decide whether to exchange currency again or exit the program.
 
+## Tests
+
+- `test_project.py` contains unit tests for the functions in `project.py`. To run the tests, use a testing framework such as `pytest`:
+  
+  write >pytest test_project.py in the terminal
+
 ## Design Choices
 
 - The program uses clear and concise prompts to guide the user through the currency conversion process.
@@ -34,6 +41,10 @@ This is a Python program that allows users to convert currency using the latest 
 - The code is organized into functions to improve readability and maintainability.
 
 - The program allows users to update exchange rates if they suspect outdated information.
+
+- User-friendly display: Currency codes and symbols are now displayed for easy understanding.
+
+- Enhanced user input validation: The program now accommodates various ways users might input currencies, such as using currency codes, names, or symbols.
 
 ## Usage
 
@@ -54,4 +65,5 @@ This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for
 ## Acknowledgments
 
 - The program uses data from the Open Exchange Rates API.
+
 
