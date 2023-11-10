@@ -30,7 +30,7 @@ This Python program allows users to convert currency using the latest exchange r
 
 - `test_project.py` contains unit tests for the functions in `project.py`. To run the tests, use a testing framework such as `pytest`:
   
-  write >pytest test_project.py in the terminal
+  write pytest test_project.py in the terminal
 
 ## Design Choices
 
