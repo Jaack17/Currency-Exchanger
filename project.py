@@ -8,7 +8,7 @@ def main():
 
     while True:
         exchange_rates = fetch_exchange_rates(api_key)
-        
+
         if not exchange_rates or not valid_currencies:
             print("Failed to retrieve exchange rates or currency names. Please check your API key and endpoint.")
             return
@@ -20,7 +20,7 @@ def main():
         conversion_rate = exchange_rates[target_currency] / exchange_rates[source_currency]
         converted_amount = source_amount * conversion_rate
 
-        print(f"\n{source_amount} {source_currency} is equivalent to {converted_amount:.2f} {target_currency}\n")
+        print(f"\n{source_amount} {get_currency_symbol(source_currency)} ({source_currency}) is equivalent to {converted_amount:.2f} {get_currency_symbol(target_currency)} ({target_currency})\n")
 
         if not update_exchange_rates(api_key):
             print("Failed to update exchange rates. Please check your API key and endpoint.")
@@ -88,6 +88,7 @@ def get_currency_symbol(currency_code):
         "EUR": "€",
         "GBP": "£",
         "JPY": "¥",
+        "AUD": "A$"
     }
     return symbol_map.get(currency_code, "")
 
