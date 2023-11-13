@@ -1,0 +1,6 @@
+# Core Dependencies
+- Python 3.6 or higher
+- requests
+
+# Testing Dependencies
+- pytest
