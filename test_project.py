@@ -22,3 +22,6 @@ def test_get_currency_symbol():
     assert get_currency_symbol("GBP") == "£"
     assert get_currency_symbol("XYZ") == ""
 
+
+
+
