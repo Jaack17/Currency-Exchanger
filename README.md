@@ -8,7 +8,6 @@ This Python program allows users to convert currency using the latest exchange r
 
 - [Overview](#overview)
 - [Files](#files)
-- [Description](#description)
 - [Tests](#tests)
 - [Design Choices](#design-choices)
 - [Usage](#usage)
@@ -38,28 +37,10 @@ This Python program allows users to convert currency using the latest exchange r
 - `project.py`: The main program file. It contains the code to interact with the user, fetch exchange rates, and perform currency conversion.
 - `test_project.py`: The file containing tests for the program functions.
 
-## Description
-
-1. The program starts by fetching the latest exchange rates from the Open Exchange Rates API using your API key.
-
-2. It then prompts the user for the following information:
-   - The amount in the source currency they want to convert.
-   - The source currency (e.g., USD, $, United States Dollar).
-   - The target currency (e.g., EUR, €, Euro).
-
-3. The program validates user input for currencies and numerical amounts.
-
-4. It calculates the converted amount using the provided exchange rates and displays the result to the user.
-
-5. The user has the option to update exchange rates if needed. If they choose to update, the program will fetch the latest rates from the API.
-
-6. After completing the currency exchange, the user can decide whether to exchange currency again or exit the program.
-
 ## Tests
 
 - `test_project.py` contains unit tests for the functions in `project.py`. To run the tests, use a testing framework such as `pytest`:
-  
-  write >pytest `test_project.py` in the terminal
+  type --> pytest `test_project.py` in the terminal
 
 ## Design Choices
 
@@ -85,7 +66,7 @@ This Python program allows users to convert currency using the latest exchange r
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](#) file for details.
+This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Author
 
