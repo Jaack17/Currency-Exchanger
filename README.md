@@ -41,7 +41,7 @@ This Python program allows users to convert currency using the latest exchange r
 
 - The program allows users to update exchange rates if they suspect outdated information.
 
-- User-friendly display: Currency codes and symbols are now displayed for easy understanding.
+- User-friendly display: Currency codes and symbols are displayed for easy understanding.
 
 - Input validation: The program accommodates various ways users might input currencies, such as using currency codes, names, or symbols.
 
