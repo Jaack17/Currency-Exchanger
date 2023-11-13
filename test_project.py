@@ -1,46 +1,24 @@
-from unittest.mock import patch, Mock
-from project import (
-    fetch_exchange_rates,
-    get_source_amount,
-    get_user_input,
-    update_exchange_rates,
-    exchange_currency_again,
-)
+import pytest
+from project import fetch_currency_names, fetch_exchange_rates, get_currency_symbol
 
-def test_get_user_input_valid():
-    with patch('builtins.input', return_value="USD"):
-        assert get_user_input("Enter a currency code: ") == "USD"
+@pytest.fixture
+def mock_fetch_currency_names(requests_mock):
+    requests_mock.get("https://openexchangerates.org/api/currencies.json", json={"USD": "United States Dollar", "EUR": "Euro"})
+    return fetch_currency_names("fake_api_key")
 
-def test_get_user_input_invalid():
-    with patch('builtins.input', side_effect=["InvalidCurrency", "USD"]):
-        assert get_user_input("Enter a currency code: ") == "INVALIDCURRENCY"
+@pytest.fixture
+def mock_fetch_exchange_rates(requests_mock):
+    requests_mock.get("https://openexchangerates.org/api/latest.json", json={"rates": {"USD": 1.0, "EUR": 0.85}})
+    return fetch_exchange_rates("fake_api_key")
 
-def test_get_source_amount():
-    with patch('builtins.input', return_value="100"):
-        assert get_source_amount() == 100.0
+def test_fetch_currency_names(mock_fetch_currency_names):
+    assert mock_fetch_currency_names == {"USD": "United States Dollar", "EUR": "Euro"}
 
-def test_update_exchange_rates_yes():
-    with patch('builtins.input', return_value="yes"):
-        with patch('project.fetch_exchange_rates', return_value={"USD": 1.0}):
-            assert update_exchange_rates("test_api_key") is True
+def test_fetch_exchange_rates(mock_fetch_exchange_rates):
+    assert mock_fetch_exchange_rates == {"USD": 1.0, "EUR": 0.85}
 
-def test_update_exchange_rates_no():
-    with patch('builtins.input', return_value="no"):
-        assert update_exchange_rates("test_api_key") == True
-
-def test_exchange_currency_again_yes():
-    with patch('builtins.input', return_value="yes"):
-        assert exchange_currency_again() == True
-
-def test_exchange_currency_again_no():
-    with patch('builtins.input', return_value="no"):
-        assert exchange_currency_again() == False
-
-def test_fetch_exchange_rates():
-    api_key = "test_api_key"
-    expected_rates = {"USD": 1.0, "EUR": 0.85, "GBP": 0.75, "JPY": 110.0}
-    with patch('project.requests.get', return_value=Mock(json=lambda: {"rates": expected_rates})):
-        actual_rates = fetch_exchange_rates(api_key)
-
-    assert actual_rates == expected_rates
+def test_get_currency_symbol():
+    assert get_currency_symbol("USD") == "$"
+    assert get_currency_symbol("GBP") == "£"
+    assert get_currency_symbol("XYZ") == ""
 
