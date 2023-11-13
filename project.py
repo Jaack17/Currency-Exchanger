@@ -32,6 +32,7 @@ def main():
 
 # Function to fetch currency names
 def fetch_currency_names(api_key):
+    
     # Fetch the latest exchange rates from the Open Exchange Rates API
     api_url = f"https://openexchangerates.org/api/currencies.json?app_id={api_key}"
     response = requests.get(api_url)
@@ -52,7 +53,7 @@ def fetch_exchange_rates(api_key):
 def get_source_amount():
     while True:
         try:
-            source_amount = float(input("Enter the amount to convert: "))
+            source_amount = float(input("Enter the amount in the source currency: "))
             return source_amount
         except ValueError:
             print("Invalid input. Please enter a valid numerical amount.")
