@@ -4,17 +4,6 @@ This Python program allows users to convert currency using the latest exchange r
 
 #### Video Demo:  <URL HERE>
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Files](#files)
-- [Tests](#tests)
-- [Design Choices](#design-choices)
-- [Usage](#usage)
-- [License](#license)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
 ## Overview
 
 1. The program starts by fetching the latest exchange rates from the Open Exchange Rates API using your API key.
