@@ -4,6 +4,35 @@ This Python program allows users to convert currency using the latest exchange r
 
 #### Video Demo:  <URL HERE>
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Files](#files)
+- [Description](#description)
+- [Tests](#tests)
+- [Design Choices](#design-choices)
+- [Usage](#usage)
+- [License](#license)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+1. The program starts by fetching the latest exchange rates from the Open Exchange Rates API using your API key.
+
+2. It then prompts the user for the following information:
+   - The amount in the source currency they want to convert.
+   - The source currency (e.g., USD, $, United States Dollar).
+   - The target currency (e.g., EUR, €, Euro).
+
+3. The program validates user input for currencies and numerical amounts.
+
+4. It calculates the converted amount using the provided exchange rates and displays the result to the user.
+
+5. The user has the option to update exchange rates if needed. If they choose to update, the program will fetch the latest rates from the API.
+
+6. After completing the currency exchange, the user can decide whether to exchange currency again or exit the program.
+
 ## Files
 
 - `project.py`: The main program file. It contains the code to interact with the user, fetch exchange rates, and perform currency conversion.
@@ -54,12 +83,19 @@ This Python program allows users to convert currency using the latest exchange r
 
 3. Follow the prompts to convert currency, update exchange rates, and exchange currency again.
 
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](#) file for details.
+
 ## Author
 
 - Giacomo Innocenti
-- 
+
 ## Acknowledgments
 
 - The program uses data from the Open Exchange Rates API.
+
+
+
 
 
