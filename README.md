@@ -57,7 +57,7 @@ This Python program allows users to convert currency using the latest exchange r
 ## Author
 
 - Giacomo Innocenti
-
+- 
 ## Acknowledgments
 
 - The program uses data from the Open Exchange Rates API.

@@ -14,8 +14,8 @@ def main():
             return
 
         source_amount = get_source_amount()
-        source_currency = get_user_input("Enter the source currency: ", valid_currencies)
-        target_currency = get_user_input("Enter the target currency: ", valid_currencies)
+        source_currency = get_user_input("Convert from: ", valid_currencies)
+        target_currency = get_user_input("Convert to: ", valid_currencies)
 
         conversion_rate = exchange_rates[target_currency] / exchange_rates[source_currency]
         converted_amount = source_amount * conversion_rate
@@ -52,7 +52,7 @@ def fetch_exchange_rates(api_key):
 def get_source_amount():
     while True:
         try:
-            source_amount = float(input("Enter the amount in the source currency: "))
+            source_amount = float(input("Enter the amount to convert: "))
             return source_amount
         except ValueError:
             print("Invalid input. Please enter a valid numerical amount.")
