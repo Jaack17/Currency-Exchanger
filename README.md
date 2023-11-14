@@ -2,7 +2,7 @@
 
 This Python program allows users to convert currency using the latest exchange rates from the Open Exchange Rates API. The program fetches exchange rates from the API, prompts the user for input, performs the currency conversion, and displays the result.
 
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <https://youtu.be/OkxMUOJJLxs>
 
 ## Overview
 
